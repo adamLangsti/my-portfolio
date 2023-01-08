@@ -1,0 +1,67 @@
+// Regex for email validation.
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
+// Get input element from HTML
+const nameInput = document.querySelector("input[name='name']");
+// Get form element from HTML
+const form = document.querySelector('form');
+// Get email input from HTML
+const emailInput = document.querySelector("input[name='email]");
+// Get thankyou div from HTML
+const thankyou = document.querySelector('.thank-you');
+
+let isFormValid = false;
+let isValidationON = false;
+
+const inputs = [nameInput, emailInput];
+
+// If input is OK, removes invalid class and hides sibling paragraph.
+const resetInput = (element) => {
+    element.classList.remove('invalid');
+    element.nextElementSibling.classList.add('hidden');
+};
+// If not OK, add invalid class to input and displays sibling paragraph.
+const invalidateInput = (element) => {
+    element.classList.add('invalid');
+    element.nextElementSibling.classList.remove('hidden');
+};
+
+// Displays hidden error message if incorrect name or email is entered
+const validateInputs = () => {
+    if (!isValidationON) return;
+    isFormValid = true;
+    resetInput(nameInput);
+    resetInput(emailInput);
+
+    if (!nameInput.value) {
+        isFormValid = false;
+        invalidateInput(nameInput);
+    }
+
+    if (!validateEmail(emailInput.value)) {
+        isFormValid = false;
+        invalidateInput(emailInput);
+    }
+};
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    isValidationON = true;
+    validateInputs();
+    // If form is successfully sent, remove form and display thank you message.
+    if (isFormValid) {
+        form.remove();
+    }
+    thankyou.classList.remove('hidden');
+});
+
+inputs.forEach((input) => {
+    input.addEventListener('input', () => {
+        validateInputs();
+    });
+});

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b92b238255.js" crossorigin="anonymous"></script>
+    <script defer src="index.js"></script>
+    <script defer src="emailValidation.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <!-- <img src="images/logo.png" alt="logo" class="logo"> -->
+                <h1><span>H</span>owdy.</h1>
+                <!--id used as identifier for javascript menu open/close-->
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closeMenu()"></i>
+                </ul>
+                <!--menu icon for responsive design-->
+                <i class="fas fa-bars" onclick="openMenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer.</p>
+                <h1>Hi, I'm <span>Adam</span> Lang.</h1>
+            </div>
+        </div>
+    </header>
+
+    <!---About-->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src='./images/iphone.jpg'>
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p> Motivated and ambitious web developer that is proficient in Javascript with intuitive
+                        problem solving skills. I am passionate about
+                        implementing and launching new projects. Even though I am at an entry level position,
+                        I have a lot to offer and I believe that a strong foundation in the basics of Javascript will
+                        lead to a better understanding of upcoming technologies.
+                    </p>
+
+                    <dl class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </dl>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span></li>
+                            <li class="bullet-list">Javascript</li>
+                            <li class="bullet-list">HTML5</li>
+                            <li class="bullet-list">CSS3, SCSS</li>
+                            <li class="bullet-list">React</li>
+                            <li class="bullet-list">Git</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2020 - 2021</span><br />Junior Software Developer at <a
+                                    href="https://www.animech.com/en/" target="_blank" class="work-links">Animech
+                                    AB</a>. The project that was assigned to me was to update the company's
+                                internal website using React, SCSS and version handling with Git and Gitlab daily, in
+                                combination with an agile work environment.
+                            </li>
+                            <li><span>2020</span><br />Intern at <a href="https://exor.se/" target="_blank"
+                                    class="work-links">Exor AB</a>,
+                                working with .NET to create a time schedule
+                                for employees.</li>
+                            <li><span>2019</span><br />Intern at <a href="http://myindicators.net/" target="_blank"
+                                    class="work-links">MyIndicators</a>, React Native developer. My goal was to
+                                create an application, Myli, to help people increase their quality of life pre- and post
+                                -operation.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2018-2020</span><br />VET from Stockholms Technical Institute.</li>
+                            <li><span>2007-2010</span><br />High School Diploma, Fyrisskolan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Portfolio-->
+    <section id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src='./images/work-1.png'>
+                    <!--Layer div works as overlay that displays text and icon over image-->
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>Connects you to talented people around the world.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src='./images/work-2.png'>
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>Stream music seamlessly over the internet.</p>
+                        <a href="#"><i class="fa-solid fa-music"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src='./images/work-3.png'>
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>Buy goods easily from around the globe and get it delivered to your door.</p>
+                        <a href="#"><i class="fa-brands fa-amazon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- <a href="#" class="btn">See more</a> -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact me</h1>
+                    <p><i class="fa-solid fa-envelope"></i><a class="fa-email" href="mailto:adam.lang-1@hotmail.com">email me.</a>
+                    </p>
+                    <p><i class="fa-solid fa-phone"></i>0534 300 361</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="./images/Adam Lang Web Developer.pdf" class="btn btn2" download>Download CV</a>
+                </div>
+
+                <!-- <div class="contact-right">
+                    <form action="https://formspree.io/f/xwkzbyyb" method="POST">
+                        <input class="" type="text" name="name" id="name" placeholder="Your Name">
+                        <p class="error-hint hidden">Your name is required.</p>
+                        <input type="email" name="email" id="email" placeholder="Your Email">
+                        <p class="error-hint hidden">Your email is required.</p>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <p class="error-hint hidden">You need to write a message.</p>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <div class="thank-you hidden">Thank you, your message has been sent!</div>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>
