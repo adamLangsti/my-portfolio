@@ -183,6 +183,7 @@ h1 {
     border-radius: 10px;
     display: block;
     transition: 0.5s;
+    height: 100%;
 }
 /*Layer containing h3, p and and a tag that has 0 height which increase on hover*/
 .layer {
