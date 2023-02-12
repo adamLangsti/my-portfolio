@@ -108,7 +108,7 @@ h1 {
 }
 .tab-titles {
     display: flex;
-    margin: 20px 0 40px;
+    margin: 20px 0 20px;
 }
 
 .tab-links {
@@ -153,7 +153,8 @@ h1 {
     display: none;
 }
 .tab-contents.active-tab {
-    display: block;
+    display: flex;
+    align-items: center;
 }
 .work-links {
     text-decoration: none;
